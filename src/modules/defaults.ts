@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { ValidatorFn, AsyncValidatorFn } from '@angular/forms';
 
 import { SECONDARY_PLACEHOLDER, PLACEHOLDER } from './core/constants';
-import { TagInputDropdown } from './components/dropdown/tag-input-dropdown.component';
+import { TagInputDropdown } from './components';
 import { TagModel } from './core';
 
 export interface TagInputOptions {
@@ -93,8 +93,8 @@ export const defaults = {
         displayBy: 'display',
         identifyBy: 'value',
         animationDuration: {
-            enter: "250ms",
-            leave: "150ms"
+            enter: '250ms',
+            leave: '150ms'
         }
     },
     dropdown: <TagInputDropdownOptions>{

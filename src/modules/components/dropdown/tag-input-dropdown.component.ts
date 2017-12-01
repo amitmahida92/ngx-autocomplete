@@ -19,7 +19,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/first';
 import 'rxjs/add/operator/debounceTime';
 
-import { Ng2Dropdown, Ng2MenuItem } from 'ng2-material-dropdown';
+import { Ng2Dropdown, Ng2MenuItem } from '../../ng2-dropdown';
 import { TagModel, TagInputDropdownOptions, OptionsProvider } from '../../core';
 import { TagInputComponent } from '../../components';
 
