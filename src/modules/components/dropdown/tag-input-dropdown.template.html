@@ -1,0 +1,11 @@
+<ng2-dropdown (onItemClicked)="onItemChecked($event)" >
+    <ng2-dropdown-menu [focusFirstElement]="focusFirstElement" [appendToBody]="appendToBody" [offset]="offset">
+        <ng2-menu-item [preventClose]="keepOpen" *ngFor="let item of items; let index = index; let last = last" [value]="item" [ngSwitch]="!!templates.length">
+            <input class="styled-checkbox" type="checkbox" name="item[displayBy]" [(ngModel)]="item.checked" *ngIf="enableCheckbox">
+            <span *ngSwitchCase="false" [class.disabled]="disableIfSelected" [innerHTML]="item[displayBy] | highlight : tagInput.inputForm.value.value">
+            </span>
+            <ng-template *ngSwitchDefault [ngTemplateOutlet]="templates.first" [ngTemplateOutletContext]="{ item: item, index: index, last: last }">
+            </ng-template>
+        </ng2-menu-item>
+    </ng2-dropdown-menu>
+</ng2-dropdown>

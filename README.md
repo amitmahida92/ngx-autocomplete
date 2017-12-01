@@ -1,6 +1,16 @@
 # ngx-autocomplete
 
-Inspired by [ngx-chips](https://github.com/Gbuomprisco/ngx-chips);
+Inspired by [ngx-chips](https://github.com/Gbuomprisco/ngx-chips)
+
+Additional Features: 
+
+> Enable checkbox list for multi-select dropdown with autocomplete. // OR
+> Keep selected options in the dropdown list but make it disable.(Only can remove from separate list of the ngModel variable).
+> Display additional list of selected chips(tags).
+> Keep dropdownlist open after selection.
+> Don't show selected chips(tags) inside input component.
+
+
 
 ## Getting Started
 
@@ -12,12 +22,12 @@ Inspired by [ngx-chips](https://github.com/Gbuomprisco/ngx-chips);
 Ensure you import the module:
 
 ```javascript
-import { TagInputModule } from 'ngx-chips';
+import { NgAutocompleteModule } from 'ngx-autocomplete';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 // this is needed!
 
 @NgModule({
-   imports: [ TagInputModule, BrowserAnimationsModule, ...OtherModules ] // along with your other modules
+   imports: [ NgAutocompleteModule, BrowserAnimationsModule, ...OtherModules ] // along with your other modules
 })
 export class AppModule {}
 ```
@@ -38,6 +48,12 @@ If you do use an array of objects, make sure you:
 ---
 
 #### Properties (optional)
+
+
+**`displayInlineTags`** - [**`?boolean`**]
+
+Flat that shows/hides selected chips inside the input field. Default is `true`.
+
 **`placeholder`** - [**`?string`**]
 
 String that sets the placeholder of the input for entering new terms.
@@ -303,7 +319,17 @@ Event fired when a tag is edited
 
 
 ## API for TagInputDropdownComponent
-TagInputDropdownComponent is a proxy between `ngx-chips` and `ng2-material-dropdown`.
+TagInputDropdownComponent is a proxy between `ngx-autocomplete` and `ng2-material-dropdown`.
+
+
+**`enableCheckbox`** - [**`?boolean`**]
+
+Enables checkbox list for multi selection. Default is `false`.
+
+**`disableIfSelected`** - [**`?boolean`**]
+
+Disables selected items in the dropdown list. Default is `false`.
+
 
 **`autocompleteObservable`** - [**`(text: string) => Observable<Response>`**]
 
@@ -585,9 +611,9 @@ Define your own template, but remember to set up the needed events using the `in
 If you use many instances of the component and want to set some values by default for all of them, import the module and use `withDefaults`:
 
 ```javascript
-import { TagInputModule } from 'ngx-chips';
+import { NgAutocompleteModule } from 'ngx-autocomplete';
 
-TagInputModule.withDefaults({
+NgAutocompleteModule.withDefaults({
     tagInput: {
         placeholder: 'Add a new tag',
         // add here other default values for tag-input

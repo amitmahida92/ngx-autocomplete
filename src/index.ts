@@ -1,35 +1,51 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { SampleComponent } from './sample.component';
-import { SampleDirective } from './sample.directive';
-import { SamplePipe } from './sample.pipe';
-import { SampleService } from './sample.service';
+import { Ng2DropdownModule } from 'ng2-material-dropdown';
+import { HighlightPipe, DragProvider, Options, OptionsProvider } from './modules/core';
 
-export * from './sample.component';
-export * from './sample.directive';
-export * from './sample.pipe';
-export * from './sample.service';
+import {
+  DeleteIconComponent,
+  TagComponent,
+  TagInputComponent,
+  TagInputDropdown,
+  TagInputForm,
+  TagRipple
+} from './modules';
+
+export * from './modules';
+
+const COMPONENTS = [
+  TagInputComponent,
+  DeleteIconComponent,
+  TagInputForm,
+  TagComponent,
+  HighlightPipe,
+  TagInputDropdown,
+  TagRipple
+];
+
+const optionsProvider = new OptionsProvider();
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    Ng2DropdownModule
   ],
-  declarations: [
-    SampleComponent,
-    SampleDirective,
-    SamplePipe
-  ],
-  exports: [
-    SampleComponent,
-    SampleDirective,
-    SamplePipe
+  declarations: COMPONENTS,
+  exports: COMPONENTS,
+  providers: [
+    DragProvider
   ]
 })
-export class SampleModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: SampleModule,
-      providers: [SampleService]
-    };
+export class NgAutocompleteModule {
+  /**
+   * @name withDefaults
+   * @param options {Options}
+   */
+  public static withDefaults(options: Options): void {
+    optionsProvider.setOptions(options);
   }
 }
