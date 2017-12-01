@@ -21,8 +21,13 @@
   "jsnext:main": "ngx-autocomplete.js",
   "typings": "ngx-autocomplete.d.ts",
   "peerDependencies": {
-    "@angular/core": "^4.0.0",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
+    "@angular/common": "^5.0.4",
+    "@angular/core": "^5.0.4",
+    "@angular/forms": "^5.0.4",
+    "rxjs": "^5.5.2",
+    "zone.js": "^0.8.18"
+  },
+  "dependencies": {
+    "ng2-material-dropdown": "^0.8.0"
   }
 }
