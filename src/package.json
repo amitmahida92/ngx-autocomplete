@@ -1,0 +1,28 @@
+{
+  "name": "ngx-autocomplete",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amitmahida92/ngx-autocomplete"
+  },
+  "author": {
+    "name": "Amit Mahida",
+    "email": "amit.mahida9292@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amitmahida92/ngx-autocomplete/issues"
+  },
+  "main": "ngx-autocomplete.umd.js",
+  "module": "ngx-autocomplete.js",
+  "jsnext:main": "ngx-autocomplete.js",
+  "typings": "ngx-autocomplete.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
